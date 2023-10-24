@@ -1,5 +1,7 @@
 # Cumulocity Note Widget Plugin
 
+## General
+
 Use the Note Widget to easily manage notes for devices and assets. Users can add new notes or extend existing ones. These notes will be shared with all users, who have access to the related device/asset and its dashboards. Each note update is stored as an event for the corresponding device/assets. Using the log section users can have a look on past notes.
 
 **Important:** Users need to have `READ` and `ADMIN` permission on the Events API, as notes and updates on notes are stored as events.

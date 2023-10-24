@@ -9,9 +9,17 @@
     "postinstall": "ngcc",
     "test": "jest"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "Cumulocity",
+    "Plugin",
+    "Widget",
+    "Note"
+  ],
+  "author": "Software AG",
   "license": "ISC",
+  "repository": {
+    "url": "https://github.com/SoftwareAG/cumulocity-note-widget-plugin"
+  },
   "dependencies": {
     "@angular/animations": "14.0.6",
     "@angular/cdk": "14.1.2",
@@ -71,7 +79,7 @@
         {
           "from": "assets",
           "to": "assets"
-      }
+        }
       ]
     },
     "cli": {}
