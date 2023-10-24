@@ -1,0 +1,54 @@
+<div class="modal-header">
+  <h3 translate>Notes log</h3>
+</div>
+
+<div class="modal-body note-widget-logs-container">
+  <ul *ngIf="!isLoading && notes && notes.length > 0; else noData" class="timeline-list">
+    <li
+      *ngFor="let note of notes; let i = index"
+      class="timeline-list-item d-flex"
+      [ngClass]="{ active: i === 0 }"
+    >
+      <small class="timeline-item-date text-right">
+        <strong class="d-block">
+          {{ note.c8y_NoteLogEvent.date | date : 'dd MMM YYYY' }}
+        </strong>
+        <span class="text-muted">
+          {{ note.c8y_NoteLogEvent.date | date : 'HH:mm:ss' }}
+        </span>
+      </small>
+      <div class="timeline-item-content d-flex">
+        <div class="list-item-body d-flex d-col">
+          <span class="text-pre-line">
+            {{ note.c8y_NoteLogEvent.content }}
+          </span>
+          <span class="text-12 text-muted">{{ note.c8y_NoteLogEvent.author }}</span>
+        </div>
+      </div>
+    </li>
+  </ul>
+
+  <ng-template #noData>
+    <div class="c8y-empty-state d-flex d-col a-i-center">
+      <i class="c8y-icon-duocolor c8y-icon c8y-icon-data-explorer"></i>
+      <div>
+        <p>
+          <strong>{{ 'No notes available' | translate }}</strong>
+        </p>
+      </div>
+    </div>
+  </ng-template>
+</div>
+
+<div class="modal-footer">
+  <button
+    translate
+    type="button"
+    class="btn btn-primary"
+    [title]="'Ok' | translate"
+    (click)="bsModalRef.hide()"
+    data-cy="note-widget-modal-dialog-button-ok"
+  >
+    {{ 'Ok' | translate }}
+  </button>
+</div>

@@ -1,0 +1,36 @@
+.note-widget-logs-container {
+  max-height: 65vh;
+  min-height: 300px;
+  overflow-y: auto;
+
+  .timeline-list {
+    padding: 15px 0 0;
+  }
+
+  .timeline-list-item {
+    .timeline-item-content {
+      background: var(
+        --component-expanded-background,
+        var(--root-component-expanded-background, var(--gray-10, #fbfbfc))
+      );
+
+      &:after {
+        border-color: transparent
+          var(
+            --component-expanded-background,
+            var(--root-component-expanded-background, var(--gray-10, #fbfbfc))
+          )
+          transparent transparent !important;
+      }
+
+      .list-item-body {
+        word-break: break-word;
+      }
+    }
+
+    &:not(.active) .timeline-item-content {
+      border: 2px solid
+        var(--component-background, var(--root-component-background, var(--gray-10, #fbfbfc)));
+    }
+  }
+}

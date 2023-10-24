@@ -1,0 +1,54 @@
+<header class="d-flex j-c-between a-i-center m-b-8">
+  <div class="note-widget-update-container p-l-8">
+    <ng-container *ngIf="note; else noNote">
+      <span data-cy="note-widget-author">{{ note.author }}</span>
+      <span class="d-inline-block" data-cy="note-widget-date">{{ note.date | c8yDate }}</span>
+    </ng-container>
+    <ng-template #noNote>
+      <span class="text-muted">{{ 'No note attached' | translate }}</span>
+    </ng-template>
+  </div>
+
+  <button
+    type="button"
+    class="btn btn-link"
+    data-cy="note-widget-button-logs"
+    [disabled]="!note"
+    (click)="onLogsButtonClicked()"
+  >
+    <i c8yIcon="history"></i>
+    {{ 'Log' | translate }}
+  </button>
+</header>
+
+<div class="note-widget-textarea-container">
+  <textarea
+    class="form-control"
+    data-cy="note-widget-content"
+    [placeholder]="'Add your notes' | translate"
+    [(ngModel)]="content"
+    (ngModelChange)="onContentUpdated()"
+  ></textarea>
+</div>
+
+<div class="d-flex">
+  <div class="note-widget-footer-buttons d-flex">
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-cy="note-widget-button-save"
+      [disabled]="!isContentChanged"
+      (click)="onSaveButtonClicked()"
+    >
+      {{ 'Submit' | translate }}</button
+    ><button
+      type="reset"
+      class="btn"
+      data-cy="note-widget-button-reset"
+      [disabled]="!isContentChanged"
+      (click)="onResetButtonClicked()"
+    >
+      {{ 'Reset' | translate }}
+    </button>
+  </div>
+</div>
