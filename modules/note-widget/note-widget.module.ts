@@ -12,8 +12,9 @@ import { NoteWidgetLogsModalComponent } from './components/note-widget-logs-moda
     hookComponent({
       id: 'c8y.note.widget',
       label: 'Note Widget',
-      description: '',
+      description: 'Easily manage and share Note for device and assets',
       component: NoteWidgetComponent,
+      previewImage: '/apps/sag-ps-iot-pkg-note-widget-plugin/assets/preview.png',
       data: {
         settings: {
           noNewWidgets: false,

@@ -9,6 +9,9 @@ msgstr ""
 msgid "Note Widget"
 msgstr "Notiz-Widget"
 
+msgid "Easily manage and share Note for device and assets"
+msgstr "Notizen für Geräte und Assets einfach verwalten und teilen"
+
 msgid "No note attached"
 msgstr "Keine Notiz angefügt"
 
