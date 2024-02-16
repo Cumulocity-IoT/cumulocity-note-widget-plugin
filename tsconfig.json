@@ -12,6 +12,7 @@
     "lib": ["dom", "es2015", "es2016"],
     "skipLibCheck": true
   },
+  "exclude": ["**/*.spec.ts"],
   "angularCompilerOptions": {
     "enableIvy": true
   }
